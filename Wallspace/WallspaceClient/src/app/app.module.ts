@@ -6,11 +6,11 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { TooltipModule } from "ngx-bootstrap/tooltip";
+import { ModalModule } from "ngx-bootstrap/modal";
+import { LoginComponent } from "./components/login/login.component";
+import { HomeComponent } from "./components/home/home.component";
+import { SignUpComponent } from "./components/sign-up/sign-up.component";
 
 @NgModule({
   declarations: [
