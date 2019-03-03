@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallspace", "Wallspace\Wallspace.csproj", "{227383C2-DF98-4ACB-B476-FFD3E1BD3A83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallspace.Tests", "Wallspace.Tests\Wallspace.Tests.csproj", "{D066EB89-676B-4B73-A614-14379DBB30FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{227383C2-DF98-4ACB-B476-FFD3E1BD3A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{227383C2-DF98-4ACB-B476-FFD3E1BD3A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{227383C2-DF98-4ACB-B476-FFD3E1BD3A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D066EB89-676B-4B73-A614-14379DBB30FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D066EB89-676B-4B73-A614-14379DBB30FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D066EB89-676B-4B73-A614-14379DBB30FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D066EB89-676B-4B73-A614-14379DBB30FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
