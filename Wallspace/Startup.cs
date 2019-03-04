@@ -4,11 +4,13 @@ namespace Wallspace
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.ApplicationModels;
     using Microsoft.AspNetCore.SpaServices.AngularCli;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
+    using Wallspace.Infrastructure;
     using Wallspace.Models;
     using Wallspace.Models.Database;
 
@@ -23,7 +25,8 @@ namespace Wallspace
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options => options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer())))
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<WallspaceDbContext>(options => options.UseNpgsql(_configuration["Data:Identity:ConnectionString"]));
 
@@ -51,11 +54,7 @@ namespace Wallspace
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(name: null,
-                                template: "{controller}/{action=index}");
-            });
+            app.UseMvc();
 
             app.UseSpa(spa =>
             {

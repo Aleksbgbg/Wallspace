@@ -8,6 +8,7 @@
     using Wallspace.Extensions;
     using Wallspace.Models;
 
+    [ApiController]
     [Route("api/[Controller]/[Action]")]
     public class AccountController : ControllerBase
     {
