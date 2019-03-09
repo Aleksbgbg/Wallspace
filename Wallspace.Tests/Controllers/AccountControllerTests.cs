@@ -37,7 +37,7 @@
             // Arrange
             _userManagerMock.Setup(userManager => userManager.CreateAsync(It.IsAny<WallspaceUser>(), It.IsAny<string>())).ReturnsAsync(IdentityResult.Success);
 
-            AccountController accountController = new AccountController(_userManagerMock.Object);
+            AccountController accountController = new AccountController(_userManagerMock.Object, null, null);
 
             RegistrationCredentials registrationCredentials = new RegistrationCredentials
             {
@@ -62,7 +62,7 @@
         public async Task TestRegisterInvalidCredentials()
         {
             // Arrange
-            AccountController accountController = new AccountController(_userManagerMock.Object);
+            AccountController accountController = new AccountController(_userManagerMock.Object, null, null);
 
             // Invalid credentials simulation
             accountController.ModelState.AddModelError(string.Empty, string.Empty);
