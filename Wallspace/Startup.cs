@@ -17,6 +17,8 @@ namespace Wallspace
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.IdentityModel.Tokens;
 
+    using Swashbuckle.AspNetCore.Swagger;
+
     using Wallspace.Infrastructure;
     using Wallspace.Infrastructure.Jwt;
     using Wallspace.Models;
@@ -76,6 +78,13 @@ namespace Wallspace
                         ValidateLifetime = true,
                         ClockSkew = TimeSpan.Zero
                     });
+
+            services.AddSwaggerGen(options => options.SwaggerDoc("v1",
+                                                                 new Info
+                                                                 {
+                                                                     Title = "API",
+                                                                     Version = "v1"
+                                                                 }));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -83,6 +92,9 @@ namespace Wallspace
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "API"));
             }
             else
             {
